@@ -103,7 +103,7 @@ client.connect(err => {
     })
 
     app.post('/addBooking', (req, res) => {    
-        //for data create
+  
         const book = req.body
         BookCollection.insertOne(book)
             .then(result => {
@@ -132,7 +132,7 @@ client.connect(err => {
     })
 
 
-    app.post('/addReview', (req, res) => {    //for data create
+    app.post('/addReview', (req, res) => {   
         const order = req.body
         console.log(order);
         reviewCollection.insertOne(order)
@@ -144,7 +144,7 @@ client.connect(err => {
             })
     })
     app.get('/addReview', (req, res) => {   
-         //for data create
+      
         reviewCollection.find({})
             .toArray((err, documents) => {
                 res.send(documents);
@@ -176,7 +176,7 @@ client.connect(err => {
 })
 
 app.get('/', (req, res) => {
-    res.send('GET request to the homepage')
+    res.send('GET request  homepage')
 })
 
 app.listen(process.env.PORT || port)
